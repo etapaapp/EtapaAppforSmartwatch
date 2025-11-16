@@ -34,4 +34,7 @@
     <color name="text_primary">#000000</color>
     <color name="text_secondary">#808080</color>
     <color name="widget_text_primary">#FF000000</color>
+
+    <color name="bootstrap_info">#0DCAF0</color> <!-- Azul claro para bg-info -->
+    <color name="bootstrap_amber_dark">#FF6F00</color> <!-- Laranja escuro para amber darken-4 -->
 </resources>
