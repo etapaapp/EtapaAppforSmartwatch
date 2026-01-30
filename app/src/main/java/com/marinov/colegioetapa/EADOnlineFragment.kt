@@ -113,9 +113,12 @@ class EADOnlineFragment : Fragment() {
                 handler.postDelayed({
                     if (isAdded && !isDetached) {
                         view?.evaluateJavascript(
-                            "(function() { " +
-                                    "return document.querySelector('#page-content-wrapper > div.d-lg-flex > div.container-fluid.p-3 > " +
-                                    "div.card.bg-transparent.border-0 > div.card-body.px-0.px-md-3 > div:nth-child(2) > div.card-body > table') !== null; " +
+                            "(function() {" + // Adicionado o início da função
+                                    "  var element = document.querySelector('#page-content-wrapper > div.d-lg-flex > div.container-fluid.p-3 > div.card.bg-transparent.border-0 > div.card-body.px-0.px-md-3 > div:nth-child(2) > div.card-header.bg-soft-blue.border-left-blue.text-blue.rounded.text-center');" +
+                                    "  if (element) {" +
+                                    "    return element.innerText.includes('Tabela com as Notas das Provas');" +
+                                    "  }" +
+                                    "  return false;" +
                                     "})();"
                         ) { value ->
                             if (isAdded && !isDetached) {

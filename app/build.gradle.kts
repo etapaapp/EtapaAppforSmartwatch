@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
 }
-
 android {
     namespace = "com.marinov.colegioetapa"
     compileSdk = 36
@@ -12,9 +10,7 @@ android {
         minSdk = 24
         targetSdk = 36
         versionCode = 1
-        versionName = "7.3"
-        buildConfigField("String", "EAD_URL", "\"${project.properties["EAD_URL"]}\"")
-        buildConfigField("String", "GITHUB_PAT", "\"${project.properties["GITHUB_PAT"]}\"")
+        versionName = "8.0"
     }
 
     buildTypes {
@@ -32,10 +28,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
-        android.buildFeatures.buildConfig = true
-    }
-    kotlinOptions {
-        jvmTarget = "11"
+        buildConfig = true
     }
 }
 
